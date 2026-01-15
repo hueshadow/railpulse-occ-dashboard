@@ -39,28 +39,73 @@ export const DesignSystemSection: React.FC = () => {
               <div className="space-y-4">
                 <div className="group">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs text-white font-medium">深邃蓝</span>
-                    <span className="text-[10px] font-mono text-slate-500">#0B1020</span>
+                    <span className="text-xs text-white font-medium">深色背景</span>
+                    <span className="text-[10px] font-mono text-slate-500">#050505</span>
                   </div>
-                  <div className="h-12 w-full rounded-lg bg-[#0B1020] border border-white/10 flex items-center justify-center">
+                  <div className="h-12 w-full rounded-lg bg-[#050505] border border-white/10 flex items-center justify-center">
                     <div className="w-full h-full bg-gradient-to-br from-white/5 to-transparent opacity-50"></div>
                   </div>
                 </div>
                 <div className="group">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs text-white font-medium">电力青</span>
-                    <span className="text-[10px] font-mono text-slate-500">GRADIENT</span>
+                    <span className="text-xs text-white font-medium">面板背景</span>
+                    <span className="text-[10px] font-mono text-slate-500">#0F0F10</span>
                   </div>
-                  <div className="h-12 w-full rounded-lg bg-gradient-to-r from-[#13B6EC] to-[#0D87B0] border border-white/10 relative overflow-hidden">
+                  <div className="h-12 w-full rounded-lg bg-[#0F0F10] border border-white/10 flex items-center justify-center">
+                    <div className="w-full h-full bg-gradient-to-br from-white/5 to-transparent opacity-50"></div>
+                  </div>
+                </div>
+                <div className="group">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs text-white font-medium">Quantix 紫蓝</span>
+                    <span className="text-[10px] font-mono text-slate-500">#2E5CFF</span>
+                  </div>
+                  <div className="h-12 w-full rounded-lg bg-gradient-to-r from-[#2E5CFF] to-[#1a3a99] border border-white/10 relative overflow-hidden">
                     <div className="absolute inset-0 bg-white/10 backdrop-blur-[1px]"></div>
                   </div>
                 </div>
                 <div className="group">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs text-red-400 font-bold">P1 级告警红</span>
-                    <span className="text-[10px] font-mono text-slate-500">#EF4444</span>
+                    <span className="text-xs text-white font-medium">RailPulse 亮青</span>
+                    <span className="text-[10px] font-mono text-slate-500">#25c0f4</span>
                   </div>
-                  <div className="h-12 w-full rounded-lg bg-red-500 border border-white/10 relative overflow-hidden">
+                  <div className="h-12 w-full rounded-lg bg-gradient-to-r from-[#25c0f4] to-[#0D87B0] border border-white/10 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-white/10 backdrop-blur-[1px]"></div>
+                  </div>
+                </div>
+                <div className="group">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs text-white font-medium">极光渐变</span>
+                    <span className="text-[10px] font-mono text-slate-500">#8b5cf6 → #06b6d4</span>
+                  </div>
+                  <div className="h-12 w-full rounded-lg bg-gradient-to-r from-[#8b5cf6] via-[#2E5CFF] to-[#06b6d4] border border-white/10 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-white/10 backdrop-blur-[1px]"></div>
+                  </div>
+                </div>
+                <div className="group">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs text-red-400 font-bold">危险</span>
+                    <span className="text-[10px] font-mono text-slate-500">#ef4444</span>
+                  </div>
+                  <div className="h-12 w-full rounded-lg bg-[#ef4444] border border-white/10 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-white/10 backdrop-blur-[1px]"></div>
+                  </div>
+                </div>
+                <div className="group">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs text-amber-400 font-bold">警告</span>
+                    <span className="text-[10px] font-mono text-slate-500">#f59e0b</span>
+                  </div>
+                  <div className="h-12 w-full rounded-lg bg-[#f59e0b] border border-white/10 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-white/10 backdrop-blur-[1px]"></div>
+                  </div>
+                </div>
+                <div className="group">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs text-emerald-400 font-bold">成功</span>
+                    <span className="text-[10px] font-mono text-slate-500">#10b981</span>
+                  </div>
+                  <div className="h-12 w-full rounded-lg bg-[#10b981] border border-white/10 relative overflow-hidden">
                     <div className="absolute inset-0 bg-white/10 backdrop-blur-[1px]"></div>
                   </div>
                 </div>

@@ -92,7 +92,7 @@ export const InformationArchitectureSection: React.FC = () => {
               <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#60a5fa 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/5 blur-3xl rounded-full pointer-events-none"></div>
               
-              <div className="relative w-full max-w-lg h-full max-h-[400px] flex flex-col justify-between z-10">
+              <div className="relative w-full max-w-lg h-full max-h-[450px] flex flex-col justify-between z-10">
                 {/* Root Node */}
                 <div className="flex justify-center relative">
                   <div className="node-card text-white w-48 py-4 rounded-lg text-center font-bold z-20 relative backdrop-blur-xl">
@@ -103,41 +103,104 @@ export const InformationArchitectureSection: React.FC = () => {
                 </div>
 
                 {/* Connecting Lines */}
-                <div className="absolute top-[20%] left-0 w-full h-[60%] border-t border-l border-r border-primary/30 rounded-t-3xl -z-0"></div>
+                <div className="absolute top-[18%] left-0 w-full h-[65%] border-t border-l border-r border-primary/30 rounded-t-3xl -z-0"></div>
 
-                {/* Sub Nodes Grid */}
-                <div className="grid grid-cols-3 gap-4 mt-12">
-                  {/* Node 1 */}
+                {/* Sub Nodes Grid - Dashboard Children */}
+                <div className="grid grid-cols-3 gap-3 mt-12">
+                  {/* Row 1 */}
                   <div className="flex flex-col items-center gap-2 relative group">
                     <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-[2px] h-12 bg-primary/20 group-hover:bg-primary/50 transition-colors"></div>
-                    <div className="node-card text-white w-full py-5 rounded-lg flex flex-col items-center gap-2 z-20 cursor-pointer">
-                      <span className="material-symbols-outlined text-primary text-2xl">campaign</span>
-                      <span className="text-sm font-semibold">应急指挥中心</span>
+                    <div className="node-card text-white w-full py-3.5 rounded-lg flex flex-col items-center gap-1.5 z-20 cursor-pointer">
+                      <span className="material-symbols-outlined text-blue-400 text-xl">dashboard</span>
+                      <span className="text-xs font-semibold">系统总览</span>
                     </div>
-                    <div className="h-6 w-[1px] bg-white/10"></div>
-                    <div className="text-[10px] text-text-secondary uppercase bg-white/5 border border-white/10 px-2 py-0.5 rounded backdrop-blur">指挥</div>
+                    <div className="h-5 w-[1px] bg-white/10"></div>
+                    <div className="text-[9px] text-text-secondary uppercase bg-white/5 border border-white/10 px-1.5 py-0.5 rounded backdrop-blur">核心</div>
                   </div>
 
-                  {/* Node 2 */}
                   <div className="flex flex-col items-center gap-2 relative group">
                     <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-[2px] h-12 bg-primary/20 group-hover:bg-primary/50 transition-colors"></div>
-                    <div className="node-card text-white w-full py-5 rounded-lg flex flex-col items-center gap-2 z-20 cursor-pointer">
-                      <span className="material-symbols-outlined text-primary text-2xl">precision_manufacturing</span>
-                      <span className="text-sm font-semibold">资产管理</span>
+                    <div className="node-card text-white w-full py-3.5 rounded-lg flex flex-col items-center gap-1.5 z-20 cursor-pointer">
+                      <span className="material-symbols-outlined text-cyan-400 text-xl">directions_railway</span>
+                      <span className="text-xs font-semibold">运行监控</span>
                     </div>
-                    <div className="h-6 w-[1px] bg-white/10"></div>
-                    <div className="text-[10px] text-text-secondary uppercase bg-white/5 border border-white/10 px-2 py-0.5 rounded backdrop-blur">硬件</div>
+                    <div className="h-5 w-[1px] bg-white/10"></div>
+                    <div className="text-[9px] text-text-secondary uppercase bg-white/5 border border-white/10 px-1.5 py-0.5 rounded backdrop-blur">运营</div>
                   </div>
 
-                  {/* Node 3 */}
                   <div className="flex flex-col items-center gap-2 relative group">
                     <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-[2px] h-12 bg-primary/20 group-hover:bg-primary/50 transition-colors"></div>
-                    <div className="node-card text-white w-full py-5 rounded-lg flex flex-col items-center gap-2 z-20 cursor-pointer">
-                      <span className="material-symbols-outlined text-primary text-2xl">history</span>
-                      <span className="text-sm font-semibold">历史数据</span>
+                    <div className="node-card text-white w-full py-3.5 rounded-lg flex flex-col items-center gap-1.5 z-20 cursor-pointer">
+                      <span className="material-symbols-outlined text-green-400 text-xl">people</span>
+                      <span className="text-xs font-semibold">客流分析</span>
                     </div>
-                    <div className="h-6 w-[1px] bg-white/10"></div>
-                    <div className="text-[10px] text-text-secondary uppercase bg-white/5 border border-white/10 px-2 py-0.5 rounded backdrop-blur">日志</div>
+                    <div className="h-5 w-[1px] bg-white/10"></div>
+                    <div className="text-[9px] text-text-secondary uppercase bg-white/5 border border-white/10 px-1.5 py-0.5 rounded backdrop-blur">数据</div>
+                  </div>
+
+                  {/* Row 2 */}
+                  <div className="flex flex-col items-center gap-2 relative group">
+                    <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-[2px] h-12 bg-primary/20 group-hover:bg-primary/50 transition-colors"></div>
+                    <div className="node-card text-white w-full py-3.5 rounded-lg flex flex-col items-center gap-1.5 z-20 cursor-pointer">
+                      <span className="material-symbols-outlined text-yellow-400 text-xl">location_city</span>
+                      <span className="text-xs font-semibold">车站运维</span>
+                    </div>
+                    <div className="h-5 w-[1px] bg-white/10"></div>
+                    <div className="text-[9px] text-text-secondary uppercase bg-white/5 border border-white/10 px-1.5 py-0.5 rounded backdrop-blur">资产</div>
+                  </div>
+
+                  <div className="flex flex-col items-center gap-2 relative group">
+                    <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-[2px] h-12 bg-primary/20 group-hover:bg-primary/50 transition-colors"></div>
+                    <div className="node-card text-white w-full py-3.5 rounded-lg flex flex-col items-center gap-1.5 z-20 cursor-pointer border border-purple-500/30">
+                      <span className="material-symbols-outlined text-purple-400 text-xl">warning</span>
+                      <span className="text-xs font-semibold">应急响应</span>
+                    </div>
+                    <div className="h-5 w-[1px] bg-white/10"></div>
+                    <div className="text-[9px] text-purple-400 uppercase bg-purple-500/10 border border-purple-500/20 px-1.5 py-0.5 rounded backdrop-blur">指挥</div>
+                  </div>
+
+                  <div className="flex flex-col items-center gap-2 relative group">
+                    <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-[2px] h-12 bg-primary/20 group-hover:bg-primary/50 transition-colors"></div>
+                    <div className="node-card text-white w-full py-3.5 rounded-lg flex flex-col items-center gap-1.5 z-20 cursor-pointer">
+                      <span className="material-symbols-outlined text-orange-400 text-xl">subway</span>
+                      <span className="text-xs font-semibold">多式联运</span>
+                    </div>
+                    <div className="h-5 w-[1px] bg-white/10"></div>
+                    <div className="text-[9px] text-text-secondary uppercase bg-white/5 border border-white/10 px-1.5 py-0.5 rounded backdrop-blur">整合</div>
+                  </div>
+
+                  {/* Row 3 - Third level with Emergency Command Center */}
+                  <div className="flex flex-col items-center gap-2 relative group">
+                    <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-[2px] h-12 bg-primary/20 group-hover:bg-primary/50 transition-colors"></div>
+                    <div className="node-card text-white w-full py-3.5 rounded-lg flex flex-col items-center gap-1.5 z-20 cursor-pointer">
+                      <span className="material-symbols-outlined text-indigo-400 text-xl">history</span>
+                      <span className="text-xs font-semibold">事件回放</span>
+                    </div>
+                    <div className="h-5 w-[1px] bg-white/10"></div>
+                    <div className="text-[9px] text-text-secondary uppercase bg-white/5 border border-white/10 px-1.5 py-0.5 rounded backdrop-blur">日志</div>
+                  </div>
+
+                  <div className="flex flex-col items-center gap-2 relative group">
+                    <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-[2px] h-12 bg-primary/20 group-hover:bg-primary/50 transition-colors"></div>
+                    <div className="node-card text-white w-full py-3.5 rounded-lg flex flex-col items-center gap-1.5 z-20 cursor-pointer">
+                      <span className="material-symbols-outlined text-teal-400 text-xl">precision_manufacturing</span>
+                      <span className="text-xs font-semibold">资产管理</span>
+                    </div>
+                    <div className="h-5 w-[1px] bg-white/10"></div>
+                    <div className="text-[9px] text-text-secondary uppercase bg-white/5 border border-white/10 px-1.5 py-0.5 rounded backdrop-blur">硬件</div>
+                  </div>
+
+                  {/* Emergency Command Center - Child of Emergency Response */}
+                  <div className="flex flex-col items-center gap-2 relative group">
+                    {/* Connector line from Emergency Response above */}
+                    <div className="absolute -top-[68px] left-1/2 -translate-x-1/2 w-[1px] h-[60px] bg-gradient-to-b from-purple-500/50 via-purple-500/20 to-transparent"></div>
+                    <div className="absolute -top-[68px] left-1/2 -translate-x-1/2 w-[60%] h-[1px] bg-gradient-to-r from-transparent via-purple-500/30 to-purple-500"></div>
+                    <div className="node-card text-white w-full py-3.5 rounded-lg flex flex-col items-center gap-1.5 z-20 cursor-pointer border border-red-500/30 bg-red-500/5">
+                      <span className="material-symbols-outlined text-red-400 text-xl animate-pulse">campaign</span>
+                      <span className="text-xs font-semibold">应急指挥中心</span>
+                    </div>
+                    <div className="h-5 w-[1px] bg-white/10"></div>
+                    <div className="text-[9px] text-red-400 uppercase bg-red-500/10 border border-red-500/20 px-1.5 py-0.5 rounded backdrop-blur">指挥</div>
                   </div>
                 </div>
               </div>
