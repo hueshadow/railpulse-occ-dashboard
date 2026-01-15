@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RailPulse OCC Platform</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              // Custom Black/Gold Palette
+              obsidian: '#050505', // Main Background
+              charcoal: '#0F0F10', // Card Background
+              graphite: '#1A1A1C', // Hover State
+              border: 'rgba(255, 255, 255, 0.08)', // Glass Border
+              
+              // Legacy Compatibility (Mapped to new vars)
+              primary: "#3b82f6", 
+              "primary-light": "#60a5fa",
+              "accent-cyan": "#06b6d4",
+              "accent-purple": "#7c3aed",
+              
+              "background-dark": "var(--bg-main)",
+              "surface-dark": "var(--bg-card)",
+              
+              "text-main": "var(--text-primary)",
+              "text-secondary": "var(--text-secondary)",
+            },
+            backgroundImage: {
+              'ambient-glow': 'radial-gradient(circle at top left, rgba(76, 29, 149, 0.2) 0%, rgba(0, 0, 0, 0) 60%)',
+              'metallic': 'linear-gradient(145deg, #2a2a2a 0%, #151515 100%)',
+            },
+            fontFamily: {
+              display: ["Inter", "Noto Sans SC", "sans-serif"],
+              mono: ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"]
+            },
+            boxShadow: {
+              "glossy": "none",
+              "glow-blue": "none",
+              "glow-cyan": "none",
+              'glass-inset': 'none',
+              'neon-green': 'none',
+            },
+            backdropBlur: {
+              'xs': '2px',
+            }
+          },
+        },
+      };
+    </script>
+    
+    <style>
+      :root {
+        /* --- 核心基调：极致暗黑 (OLED Black) --- */
+        --bg-main: #050505;          /* 页面主背景：接近纯黑 */
+        --bg-sidebar: rgba(10, 10, 10, 0.6); /* 侧边栏：半透明黑 */
+        --bg-card: #0F0F10;          /* 卡片背景：磨砂炭黑 */
+        --bg-card-hover: #1A1A1C;    /* 卡片悬停：提亮 */
+
+        /* --- 玻璃与边框 (Glassmorphism) --- */
+        --glass-border: rgba(255, 255, 255, 0.08); /* 极细的白线边框 */
+        --glass-shine: rgba(255, 255, 255, 0.03);  /* 表面反光 */
+        --glass-blur: 20px;          /* 强力磨砂 */
+
+        /* --- 文字层级 --- */
+        --text-primary: #FFFFFF;     /* 标题：纯白 */
+        --text-secondary: #9CA3AF;   /* 次要信息：冷灰 */
+        --text-tertiary: #4B5563;    /* 辅助文本：深灰 */
+
+        /* --- 金融功能色 (Fintech Accents) --- */
+        --accent-green: #10B981;     /* 涨幅/成功 */
+        --accent-red: #EF4444;       /* 跌幅/危险 */
+        --accent-btc: #F7931A;       /* 比特币橙 */
+        --accent-eth: #627EEA;       /* 以太坊蓝 */
+
+        /* --- 氛围光效 (Ambient Glow) --- */
+        /* 用于左上角的紫色极光背景 */
+        --glow-ambient: radial-gradient(circle at 0% 0%, rgba(76, 29, 149, 0.15) 0%, rgba(0, 0, 0, 0) 50%);
+      }
+
+      /* 1. 全局背景应用 */
+      body {
+        margin: 0;
+        background-color: var(--bg-main);
+        background-image: var(--glow-ambient); /* 注入灵魂的一行 */
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        color: var(--text-primary);
+        font-family: 'Inter', -apple-system, sans-serif;
+      }
+
+      /* 2. 磨砂卡片标准样式 (Crypto Style) */
+      .crypto-card {
+        background: var(--bg-card);
+        border: 1px solid var(--glass-border);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 16px;
+        transition: all 0.3s ease;
+      }
+
+      .crypto-card:hover {
+        background: var(--bg-card-hover);
+        border-color: rgba(255,255,255, 0.15);
+        transform: translateY(-2px);
+      }
+
+      /* 3. 极致金属光感按钮 (Metallic Button) */
+      .btn-metallic {
+        background: linear-gradient(145deg, #2a2a2a, #151515); /* 金属拉丝感 */
+        border: 1px solid rgba(255,255,255,0.1);
+        color: #fff;
+        border-radius: 8px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: none !important;
+      }
+
+      /* 悬停时的流光效果 */
+      .btn-metallic::after {
+        content: '';
+        position: absolute;
+        top: 0; left: -100%;
+        width: 50%; height: 100%;
+        background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+        transform: skewX(-20deg);
+        transition: 0.5s;
+      }
+
+      .btn-metallic:hover::after {
+        left: 150%; /* 光扫过按钮 */
+      }
+
+      /* --- LEGACY/COMPATIBILITY STYLES --- */
+      
+      .glass-panel {
+        background: rgba(15, 15, 16, 0.7); /* Adjusted for OLED theme */
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid var(--glass-border);
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: none !important;
+        border-radius: 1.5rem;
+      }
+      
+      .glass-panel-active {
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(5, 5, 5, 0.9) 100%);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        box-shadow: none !important;
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        border-radius: 1.5rem;
+      }
+      
+      .glass-panel-dark {
+        background: var(--bg-card);
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+        border: 1px solid var(--glass-border);
+        box-shadow: none !important;
+        border-radius: 1.25rem;
+      }
+
+      .glass-card-clean {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid var(--glass-border);
+        border-radius: 1rem;
+        transition: all 0.3s ease;
+      }
+      .glass-card-clean:hover {
+        background: var(--bg-card-hover);
+        border-color: rgba(255, 255, 255, 0.1);
+        box-shadow: none !important; 
+      }
+
+      /* Inputs */
+      .glass-input {
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--glass-border);
+        border-radius: 9999px;
+        color: white;
+        transition: all 0.2s;
+        backdrop-filter: blur(10px);
+      }
+      .glass-input:focus-within {
+        border-color: #3b82f6;
+        box-shadow: none !important;
+      }
+      
+      /* Text Glow Utility */
+      .text-glow {
+        text-shadow: none !important;
+      }
+
+      /* Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--bg-main);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--text-tertiary);
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--text-secondary);
+      }
+      
+      /* Recharts Overrides */
+      .recharts-cartesian-grid-horizontal line,
+      .recharts-cartesian-grid-vertical line {
+        stroke: var(--glass-border);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
